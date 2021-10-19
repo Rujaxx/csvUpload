@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/Rujaxx/csvUpload#readme",
   "dependencies": {
+    "csvtojson": "^2.0.10",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "fast-csv": "^4.3.6",
     "mongoose": "^6.0.11"
   },
   "devDependencies": {
