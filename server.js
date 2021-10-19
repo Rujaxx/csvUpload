@@ -19,6 +19,9 @@ connectDB();
 
 const app = express();
 
+// Body parser
+app.use(express.json());
+
 app.use(fileUpload({
     useTempFiles : true,
     tempFileDir : '/tmp/'
@@ -28,8 +31,10 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-let upload = require('./routes/upload');
+const upload = require('./routes/upload');
+const getUser = require('./routes/user')
 app.use('/', upload)
+app.use('/users', getUser)
 
 const PORT  = process.env.PORT || 4000
 
